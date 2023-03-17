@@ -137,7 +137,7 @@ const result = getTimeFromMinutes(120);
 console.log(result);
 
 
-// Задача с числами Фибоначчи
+//      Задача с числами Фибоначчи
 function fib(num) {
     if (typeof (num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
         return "";
@@ -164,5 +164,5 @@ function fib(num) {
     return result;
 }
 
-const number = fib(6);
+const number = fib(7);
 console.log(number);
