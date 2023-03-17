@@ -110,13 +110,28 @@ function getTimeFromMinutes(minutesTotal) {
             break;
         default:
             hoursStr = 'часов';
-
     }
 
-    return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+    switch (minutes) {
+        case 0:
+            minutesStr = "минут";
+            break;
+        case 1:
+            minutesStr = "минута";
+            break;
+        case 2:
+        case 3:
+        case 4:
+            minutesStr = "минуты"
+            break;
+        default:
+            minutesStr = "минут"
+    }
+
+    return `Это ${hours} ${hoursStr} и ${minutes} ${minutesStr}`;
 
 }
 
-const result = getTimeFromMinutes(65);
+const result = getTimeFromMinutes(120);
 
 console.log(result);
