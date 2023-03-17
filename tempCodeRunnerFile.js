@@ -1,30 +1,27 @@
-function getTimeFromMinutes(minutesTotal) {
-    if (typeof (minutesTotal !== 'number' || minutesTotal < 0) || !Number.isInteger(minutesTotal)) {
-        return "Ошибка, проверьте данные";
+function fib(num) {
+    if (typeof (num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
     }
 
-    const hours = Math.floor(minutesTotal / 60);
-    const minutes = minutesTotal % 60;
+    let result = '';
+    let first = 0;
+    let second = 1;
 
-    switch (hours) {
-        case 0:
-            hoursStr = "часов";
-            break;
-        case 1:
-            hoursStr = 'час';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            hoursStr = 'часа';
-            break;
-        default:
-            hoursStr = 'часов';
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
 
+
+        let third = first + second;
+        first = second;
+        second = third;
     }
 
-    return `Это ${hours} ${hoursStr} и ${minutesTotal} минут`;
-
+    return result;
 }
 
-getTimeFromMinutes(120);
+fib(5);
