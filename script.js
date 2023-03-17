@@ -1,3 +1,5 @@
+'use strict'
+
 let numberOfFilms;
 
 function start() {
@@ -8,7 +10,7 @@ function start() {
     }
 }
 
-start();
+// start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -46,33 +48,36 @@ function rememberMyFilms() {
     }
 }
 
-rememberMyFilms();
+// rememberMyFilms();
 
-if (personalMovieDB.count < 10) {
-    console.log("Просмотрено довльно мало фильмов");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log("Вы классический зритель");
-} else if (personalMovieDB.count >= 30) {
-    console.log("Вы киноман");
-} else {
-    console.log("Ошибка");
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log("Просмотрено довльно мало фильмов");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log("Вы классический зритель");
+    } else if (personalMovieDB.count >= 30) {
+        console.log("Вы киноман");
+    } else {
+        console.log("Ошибка");
+    }
 }
 
+// detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+// showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр по номерои ${i}`);
+    }
+}
+
+writeYourGenres();
+
 console.log(personalMovieDB);
-
-// const num = 50;
-
-// switch (num) {
-//     case 49:23
-//         console.log('неверно');
-//         break;
-//     case 100:
-//         console.log('неверно');
-//         break;
-//     case 51:
-//         console.log('в точку');
-//         break;
-//     default:
-//         console.log('не в этот раз');
-//         break;
-// }
