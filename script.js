@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 // let numberOfFilms;
 
@@ -35,7 +35,7 @@
 
 // function rememberMyFilms() {
 //     for (let i = 0; i < 2; i++) {
-//         const a = prompt('один из последних просмотренных фильмов?', ''),
+//         const a = prompt('один из последних просмотренных фильмов?', '').trim(),
 //             b = prompt('На сколько оцените его?', '');
 
 //         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
@@ -166,3 +166,30 @@ function fib(num) {
 
 const number = fib(7);
 console.log(number);
+
+
+// Objects 
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
+
+console.log(Object.keys(options).length);
+
+// console.log(options.name);
+
+for (let key in options) {
+    if (typeof (options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойство ${key} имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
+} 
